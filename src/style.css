@@ -47,22 +47,47 @@ ul {
 
 }
 
+.input-list {
+    margin-left: 30px;
+}
+
 .marg {
     margin-bottom: 20px;
 }
 
-.input-list {
-    
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.activated {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+.modal {
+  background: white;
+  position: relative;
+  border-radius: 12px;
+  width: 400px;
+  height: max-content;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.unactivated {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
+.hidden {
+  display: none;
+}
+
+.close-modal {
+    background-color: transparent;
+    border-radius: 17px;
+    position: absolute;
+    right: 7;
+    font-size: 15px;
+    top: 7;
+    border: 1px black solid;
+    padding: 8px 11px;
 }
