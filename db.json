@@ -1,0 +1,14 @@
+{
+  "food": [
+    { "id": "1", "title": "Pizza", "price": "10$", "photo": "https://assets.surlatable.com/m/15a89c2d9c6c1345/72_dpi_webp-REC-283110_Pizza.jpg", "rating": 10 },
+    { "id": "2", "title": "Fried Chicken", "price": "6$", "photo": "https://static01.nyt.com/images/2024/11/24/multimedia/Buttermilk-Fried-Chickenrex-vtlk/Buttermilk-Fried-Chickenrex-vtlk-mediumSquareAt3X.jpg", "rating": 8 },
+    { "id": "3", "title": "Fry Potato", "price": "5$", "photo": "https://pinchofwellness.com/wp-content/uploads/2020/01/healthier-sweet-potato-fries_1.jpg", "rating": 9 },
+    { "id": "4", "title": "Cheeseburger", "price": "7$", "photo": "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg", "rating": 11 },
+    { "id": "5", "title": "Steak", "price": "5$", "photo": "https://www.allrecipes.com/thmb/OJ28fIFte6Pyg93ML8IM-APbu1Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-14554-sirloin-steak-with-garlic-butter-hero-4x3-d12fa79836754fcf850388e4677bbf55.jpg", "rating": 10 },
+    { "id": "6", "title": "Chicken Wings", "price": "7$", "photo": "https://www.thecookierookie.com/wp-content/uploads/2024/02/bbq-chicken-wings-recipe-featured-image.jpg", "rating": 8 },
+    { "id": "7", "title": "Nuggets", "price": "6$", "photo": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg", "rating": 9 },
+    { "id": "8", "title": "Baked Potato", "price": "8$", "photo": "https://smokinandgrillinwitab.com/wp-content/uploads/2023/12/iStock-1457726309.jpg", "rating": 10 },
+    { "id": "9", "title": "Shawarma", "price": "8$", "photo": "https://cdn.sanity.io/images/g1s4qnmz/production/86ea7cc20cf83221e5a00e50828bab494c12f011-1364x1125.png", "rating": 8 },
+    { "id": "10", "title": "Kebab", "price": "5$", "photo": "https://cookingorgeous.com/wp-content/uploads/2021/06/lamb-shish-kebab-20.jpg", "rating": 7 }
+  ]
+}
