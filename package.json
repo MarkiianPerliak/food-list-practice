@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "node": "^20.19.4"
+    "node": "^20.19.4",
+    "parcel": "^2.15.4"
   },
   "name": "food-list-practice",
   "version": "1.0.0",
   "description": "My Project",
   "homepage": "https://markiianperliak.github.io/food-list-practice/",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel src/index.html",
