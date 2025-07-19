@@ -1,4 +1,7 @@
 const list = document.querySelector(".list")
+const foodAddButton = document.querySelector(".foodadd")
+const modal = document.querySelector(".modal")
+const backdrop = document.querySelector(".backdrop")
 
 function createHtml(data) {
     console.log(data)
@@ -20,3 +23,8 @@ function getAPIAdress() {
 }
 
 getAPIAdress().then((result) => result.json()).then((resultdata) => createHtml(resultdata))
+
+foodAddButton.addEventListener("click", (event) => {
+    backdrop.classList.add("activated")
+    backdrop.classList.remove("unactivated")
+})
