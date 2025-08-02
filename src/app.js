@@ -20,7 +20,7 @@ function createHtml(data) {
 }
 
 function getAPIAdress() {
-    return fetch("https://raw.githubusercontent.com/MarkiianPerliak/food-list-practice/main/db.json")
+    return fetch("http://localhost:3000/food")
 }
 
 getAPIAdress().then((result) => result.json()).then((resultdata) => createHtml(resultdata))
