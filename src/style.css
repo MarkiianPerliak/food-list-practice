@@ -34,7 +34,17 @@ ul {
 }
 
 .price {
+    width: 100px;
+}
 
+.dollars {
+    border: 1px black solid;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 3px;
 }
 
 .img {
@@ -44,7 +54,24 @@ ul {
 }
 
 .rating {
+    width: 50px;
+height: min-content;
+}
 
+.rating2 {
+    width: 50px;
+height: min-content;
+}
+
+.string {
+    font-size: large;
+    margin-left: 2px;
+        margin-right: 2px;
+}
+
+.flex-item {
+    display: flex;
+    align-items: center;
 }
 
 .input-list {
