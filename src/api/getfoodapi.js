@@ -1,0 +1,1 @@
+export const getAPIAdress = () => fetch("http://localhost:3000/food")

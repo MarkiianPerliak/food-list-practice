@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <ul class="list">
 
@@ -16,48 +18,49 @@
     <button class="foodadd">Add Food</button>
 
 
-    <div class="backdrop">
+    <div class="backdrop hidden">
         <div class="modal">
             <button class="close-modal">X</button>
             <form class="input-list modal-form">
-<div class="flexitem">
+                <div class="flexitem">
                     <input name="title" placeholder="Food Title" type="text" class="name">
                     <p class="dv1 showbox"></p>
-</div>
+                </div>
 
-<div class="flexitem">
-                        <div class="flex-item">
-                    <input name="price" placeholder="Food Price" min="0" type="number" class="pric">
-                    <p class="dollars">$</p>
-                    <p class="dv2 showbox"></p>
-                     </div>
-</div>
+                <div class="flexitem">
+                    <div class="flex-item">
+                        <input name="price" placeholder="Food Price" min="0" type="number" class="pric">
+                        <p class="dollars">$</p>
+                        <p class="dv2 showbox"></p>
+                    </div>
+                </div>
 
-<div class="flexitem">
-                        <input name="imglink" placeholder="Food Image Link" type="text" class="imglink">
+                <div class="flexitem">
+                    <input name="imglink" placeholder="Food Image Link" type="text" class="imglink">
                     <p class="dv3 showbox"></p>
-</div>
+                </div>
 
 
-<div class="flexitem">
-                        <div class="flex-item">
-                    <input name="rating" placeholder="Rate" type="number" min="0" max="10" class="rate">
-                    <p class="string">/</p>
-                    <!-- <input name="rating2" placeholder="Rate" type="number" min="0" max="10" class="rating2"> -->
-                     <p class="max-rate">10</p>
+                <div class="flexitem">
+                    <div class="flex-item">
+                        <input name="rating" placeholder="Rate" type="number" min="0" max="10" class="rate">
+                        <p class="string">/</p>
+                        <!-- <input name="rating2" placeholder="Rate" type="number" min="0" max="10" class="rating2"> -->
+                        <p class="max-rate">10</p>
                     </div>
                     <p class="dv4 showbox"></p>
-                                        <button type="submit" class="datasend">Create</button>
-</div>
+                    <button type="submit" class="datasend">Create</button>
+                </div>
 
 
 
             </form>
-                
+
 
         </div>
     </div>
 
     <script src="./app.js" type="module"></script>
 </body>
+
 </html>
