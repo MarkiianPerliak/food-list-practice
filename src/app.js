@@ -43,9 +43,16 @@ modalForm.addEventListener("submit", (event) => {
     const foodPriceInput = event.target.elements.price;
     const foodImageInput = event.target.elements.imglink;
     const foodRatingInput = event.target.elements.rating;
-    const foodRating2Input = event.target.elements.rating2;
-    
-    console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/${foodRating2Input.value}`)
+    // if (foodTitleInput.value, foodPriceInput.value, foodImageInput.value, foodRatingInput.value === "✓") {
+    //   console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/10`)
+    // } else {
+    //   console.log("nuh uh")
+    // }
+    if (foodTitleInput || foodPriceInput || foodImageInput || foodRatingInput  === "") {
+      console.log("nuh uh")
+    } else {
+      console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/10`)
+    }
 })
 
 // dataSendButton.addEventListener("click", (event) => {
@@ -57,3 +64,56 @@ modalForm.addEventListener("submit", (event) => {
 
 //     console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/${foodRating2Input.value}`)
 // })
+
+
+
+function startInterval() {
+const showdiv1 = document.querySelector(".dv1");
+const showdiv2 = document.querySelector(".dv2");
+const showdiv3 = document.querySelector(".dv3");
+const showdiv4 = document.querySelector(".dv4");
+
+const updateInterval = setInterval(() => {
+const inputforshow1 = document.querySelector(".name").value;
+const inputforshow2 = document.querySelector(".pric").value;
+const inputforshow3 = document.querySelector(".imglink").value;
+const inputforshow4 = document.querySelector(".rate").value;
+
+if (inputforshow1 === "") {
+    showdiv1.textContent = "X"
+} else {
+    showdiv1.textContent = "✓"
+}
+if (inputforshow2 === "") {
+    showdiv2.textContent = "X"
+} else {
+    showdiv2.textContent = "✓"
+}
+if (inputforshow3 === "") {
+    showdiv3.textContent = "X"
+} else {
+    showdiv3.textContent = "✓"
+}
+if (inputforshow4 === "") {
+    showdiv4.textContent = "X"
+} else {
+    showdiv4.textContent = "✓"
+}
+}, 500)
+
+closeModal.addEventListener("click", (event) => {
+    clearInterval(updateInterval)
+})
+
+dataSendButton.addEventListener("click", (event) => {
+    clearInterval(updateInterval)
+})
+
+}
+
+
+
+foodAddButton.addEventListener("click", (event) => {
+    startInterval()
+})
+

@@ -20,28 +20,38 @@
         <div class="modal">
             <button class="close-modal">X</button>
             <form class="input-list modal-form">
+<div class="flexitem">
+                    <input name="title" placeholder="Food Title" type="text" class="name">
+                    <p class="dv1 showbox"></p>
+</div>
 
-                    <input name="title" placeholder="Food Title" type="text" class="title">
-                    <!-- <div class="showbox"><p class="dv1"></p></div> -->
-
-                    <div class="flex-item">
-                    <input name="price" placeholder="Food Price" min="0" type="number" class="price">
+<div class="flexitem">
+                        <div class="flex-item">
+                    <input name="price" placeholder="Food Price" min="0" type="number" class="pric">
                     <p class="dollars">$</p>
-                    <!-- <div class="showbox"><p class="dv2"></p></div> -->
+                    <p class="dv2 showbox"></p>
                      </div>
+</div>
 
-                    <input name="imglink" placeholder="Food Image Link" type="text" class="imglink">
-                    <!-- <div class="showbox"><p class="dv3"></p></div> -->
+<div class="flexitem">
+                        <input name="imglink" placeholder="Food Image Link" type="text" class="imglink">
+                    <p class="dv3 showbox"></p>
+</div>
 
 
-                    <div class="flex-item">
-                    <input name="rating" placeholder="Rate" type="number" min="0" max="10" class="rating">
+<div class="flexitem">
+                        <div class="flex-item">
+                    <input name="rating" placeholder="Rate" type="number" min="0" max="10" class="rate">
                     <p class="string">/</p>
-                    <input name="rating2" placeholder="Rate" type="number" min="0" max="10" class="rating2">
+                    <!-- <input name="rating2" placeholder="Rate" type="number" min="0" max="10" class="rating2"> -->
+                     <p class="max-rate">10</p>
                     </div>
-                    <!-- <div class="showbox"><p class="dv4"></p></div> -->
+                    <p class="dv4 showbox"></p>
+                                        <button type="submit" class="datasend">Create</button>
+</div>
 
-                    <button type="submit" class="datasend">Create</button>
+
+
             </form>
                 
 
