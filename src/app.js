@@ -36,9 +36,12 @@ getAPIAdress().then((result) => result.json()).then((resultdata) => {
     deletebtns.forEach(button => {
         button.addEventListener("click", (event) => {
             const theid = button.parentElement.querySelector(".id").textContent;
-            deleteProduct(theid)
-const product = resultdata.find(item => String(item.id) === String(theid));
-            updateAPI(product, theid)
+            // deleteProduct(theid)
+            const matches = resultdata.filter(item => item.id == theid);
+            const coolmatches = matches[0]
+            console.log(coolmatches)
+            // updateAPI(coolmatches, theid);
+
         })
     })
 })
