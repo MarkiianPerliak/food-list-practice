@@ -89,7 +89,7 @@ ul {
     border-radius: 30px;
 }
 
-.datasend {
+.datasend-styles {
     border: 1px black solid;
     border-radius: 20px;
     padding: 10px;
@@ -142,7 +142,7 @@ height: min-content;
     margin-bottom: 20px;
 }
 
-.backdrop {
+.backdrop-styles {
   position: fixed;
   top: 0;
   left: 0;
@@ -155,7 +155,7 @@ height: min-content;
   z-index: 1000;
 }
 
-.modal {
+.modal-styles {
   background: white;
   position: relative;
   border-radius: 12px;
@@ -170,7 +170,7 @@ padding: 10px;
   display: none;
 }
 
-.close-modal {
+.close-modal-styles {
     background-color: transparent;
     border-radius: 17px;
     position: absolute;

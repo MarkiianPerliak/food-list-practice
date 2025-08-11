@@ -45,23 +45,23 @@
     {
       "id": "7",
       "title": "Nuggets",
-      "price": "6$",
+      "price": "8$",
       "photo": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg",
-      "rating": 9
+      "rating": "10"
     },
     {
       "id": "8",
       "title": "Baked Potato",
       "price": "8$",
       "photo": "https://smokinandgrillinwitab.com/wp-content/uploads/2023/12/iStock-1457726309.jpg",
-      "rating": 10
+      "rating": "9"
     },
     {
       "id": "9",
       "title": "Shawarma",
       "price": "8$",
       "photo": "https://cdn.sanity.io/images/g1s4qnmz/production/86ea7cc20cf83221e5a00e50828bab494c12f011-1364x1125.png",
-      "rating": 8
+      "rating": "10"
     }
   ]
 }

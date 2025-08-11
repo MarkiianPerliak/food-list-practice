@@ -18,9 +18,9 @@
     <button class="foodadd">Add Food</button>
 
 
-    <div class="backdrop hidden">
-        <div class="modal">
-            <button class="close-modal">X</button>
+    <div class="backdrop backdrop-styles hidden">
+        <div class="modal modal-styles">
+            <button class="close-modal close-modal-styles">X</button>
             <form class="input-list modal-form">
                 <div class="flexitem">
                     <input name="title" placeholder="Food Title" type="text" class="name">
@@ -49,7 +49,45 @@
                         <p class="max-rate">10</p>
                     </div>
                     <p class="dv4 showbox"></p>
-                    <button type="submit" class="datasend">Create</button>
+                    <button type="submit" class="datasend datasend-styles">Create</button>
+                </div>
+
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+<div class="backdrop2 backdrop-styles hidden">
+        <div class="modal2 modal-styles">
+            <button class="close-modal2 close-modal-styles">X</button>
+            <form class="input-list modal-form2">
+                <div class="flexitem">
+                    <input name="title2" placeholder="Food Title" type="text" class="name2">
+                </div>
+
+                <div class="flexitem">
+                    <div class="flex-item">
+                        <input name="price2" placeholder="Food Price" min="0" type="number" class="pric2">
+                        <p class="dollars">$</p>
+
+                    </div>
+                </div>
+
+                <div class="flexitem">
+                    <input name="imglink2" placeholder="Food Image Link" type="text" class="imglink2">
+                </div>
+
+
+                <div class="flexitem">
+                    <div class="flex-item">
+                        <input name="rating2" placeholder="Rate" type="number" min="0" max="10" class="rate2">
+                        <p class="string">/</p>
+                        <p class="max-rate">10</p>
+                    </div>
+                    <button type="submit" class="datasend2 datasend-styles">Update</button>
                 </div>
 
 
