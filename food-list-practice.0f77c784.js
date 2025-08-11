@@ -160,7 +160,7 @@
       });
     }
   }
-})({"Y8eW6":[function(require,module,exports,__globalThis) {
+})({"7wZbQ":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -667,7 +667,217 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"2R06K":[function(require,module,exports,__globalThis) {
+var _addfoodapi = require("./api/addfoodapi");
+var _getfoodapi = require("./api/getfoodapi");
+var _deletefoodapi = require("./api/deletefoodapi");
+// import { createHtml } from "./js/createhtml"
+var _startinterval = require("./js/startinterval");
+var _updatefoodapi = require("./api/updatefoodapi");
+const list = document.querySelector(".list");
+const foodAddButton = document.querySelector(".foodadd");
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+const closeModal = document.querySelector(".close-modal");
+const dataSendButton = document.querySelector('.datasend');
+const modalForm = document.querySelector(".modal-form");
+const modal2 = document.querySelector(".modal2");
+const backdrop2 = document.querySelector(".backdrop2");
+const closeModal2 = document.querySelector(".close-modal2");
+const dataSendButton2 = document.querySelector('.datasend2');
+const modalForm2 = document.querySelector(".modal-form2");
+function createHtml(data) {
+    data.forEach((food)=>{
+        const html = `
+      <li class="item">
+        <button type="button" class="delete">Delete</button>
+        <button type="button" class="update">Update</button>
+        <h2 class="title">${food.title}</h2>
+        <p class="price">Price: ${food.price}</p>
+        <img class="img" src="${food.photo}" alt="${food.title}">
+        <p class="rating">Rating: ${food.rating}/10</p>
+        <p class="price id">${food.id}</p>
+      </li>
+    `;
+        list.insertAdjacentHTML("beforeend", html);
+    });
+}
+(0, _getfoodapi.getAPIAdress)().then((result)=>result.json()).then((resultdata)=>{
+    createHtml(resultdata);
+    const deletebtns = document.querySelectorAll(".delete");
+    const updatebtns = document.querySelectorAll(".update");
+    console.log(deletebtns);
+    deletebtns.forEach((button)=>{
+        button.addEventListener("click", (event)=>{
+            const theid = button.parentElement.querySelector(".id").textContent;
+            (0, _deletefoodapi.deleteProduct)(theid);
+        });
+    });
+    updatebtns.forEach((button)=>{
+        button.addEventListener("click", (event)=>{
+            backdrop2.classList.remove("hidden");
+            modalForm2.addEventListener("submit", (event)=>{
+                const theid = button.parentElement.querySelector(".id").textContent;
+                const title = event.target.elements.title2;
+                const price = event.target.elements.price2;
+                const photo = event.target.elements.imglink2;
+                const number = event.target.elements.rating2;
+                const object = {
+                    "title": `${title.value}`,
+                    "price": `${price.value}$`,
+                    "photo": `${photo.value}`,
+                    "rating": `${Number(number.value)}`
+                };
+                (0, _updatefoodapi.updateAPI)(object, theid);
+            });
+        });
+    });
+});
+modalForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const foodTitleInput = event.target.elements.title;
+    const foodPriceInput = event.target.elements.price;
+    const foodImageInput = event.target.elements.imglink;
+    const foodRatingInput = event.target.elements.rating;
+    const newProduct = {
+        "title": `${foodTitleInput.value}`,
+        "price": `${foodPriceInput.value}`,
+        "image": `${foodImageInput.value}`,
+        "rating": `${foodRatingInput.value}`
+    };
+    (0, _addfoodapi.addProduct)(newProduct);
+});
+foodAddButton.addEventListener("click", (event)=>{
+    backdrop.classList.remove("hidden");
+    (0, _startinterval.startInterval)();
+});
+closeModal.addEventListener("click", (event)=>{
+    backdrop.classList.add("hidden");
+});
+closeModal2.addEventListener("click", (event)=>{
+    backdrop2.classList.add("hidden");
+});
+dataSendButton2.addEventListener("click", (event)=>{
+    backdrop2.classList.add("hidden");
+}) // cmnts modalform:
+ // if (foodTitleInput.value, foodPriceInput.value, foodImageInput.value, foodRatingInput.value === "✓") {
+ //   console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/10`)
+ // } else {
+ //   console.log("nuh uh")
+ // }
+ // if (foodTitleInput || foodPriceInput || foodImageInput || foodRatingInput  === "") {
+ //   console.log("nuh uh")
+ // } else {
+ //   console.log(`${foodTitleInput.value}, ${foodPriceInput.value}, ${foodImageInput.value}, ${foodRatingInput.value}/10`)
+ // }
+;
 
-},{}]},["Y8eW6","2R06K"], "2R06K", "parcelRequiread05", {})
+},{"./api/addfoodapi":"kAcrT","./api/getfoodapi":"6FRvr","./api/deletefoodapi":"3FJU9","./js/startinterval":"c1tq7","./api/updatefoodapi":"3BL0B"}],"kAcrT":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addProduct", ()=>addProduct);
+const addProduct = (product)=>{
+    const options = {
+        method: "POST",
+        body: JSON.stringify(product),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+        }
+    };
+    fetch("http://localhost:3000/food", options);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"6FRvr":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getAPIAdress", ()=>getAPIAdress);
+const getAPIAdress = ()=>fetch("http://localhost:3000/food");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"3FJU9":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "deleteProduct", ()=>deleteProduct);
+const deleteProduct = (posthid)=>{
+    fetch(`http://localhost:3000/food/${posthid}`, {
+        method: "DELETE"
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"c1tq7":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "startInterval", ()=>startInterval);
+const startInterval = ()=>{
+    const showdiv1 = document.querySelector(".dv1");
+    const showdiv2 = document.querySelector(".dv2");
+    const showdiv3 = document.querySelector(".dv3");
+    const showdiv4 = document.querySelector(".dv4");
+    const updateInterval = setInterval(()=>{
+        const inputforshow1 = document.querySelector(".name").value;
+        const inputforshow2 = document.querySelector(".pric").value;
+        const inputforshow3 = document.querySelector(".imglink").value;
+        const inputforshow4 = document.querySelector(".rate").value;
+        if (inputforshow1 === "") showdiv1.textContent = "X";
+        else showdiv1.textContent = "\u2713";
+        if (inputforshow2 === "") showdiv2.textContent = "X";
+        else showdiv2.textContent = "\u2713";
+        if (inputforshow3 === "") showdiv3.textContent = "X";
+        else showdiv3.textContent = "\u2713";
+        if (inputforshow4 === "") showdiv4.textContent = "X";
+        else showdiv4.textContent = "\u2713";
+    }, 500);
+    closeModal.addEventListener("click", (event)=>{
+        clearInterval(updateInterval);
+    });
+    dataSendButton.addEventListener("click", (event)=>{
+        clearInterval(updateInterval);
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"3BL0B":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "updateAPI", ()=>updateAPI);
+const updateAPI = (object, id)=>{
+    const options = {
+        method: "PATCH",
+        body: JSON.stringify(object),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+        }
+    };
+    fetch(`http://localhost:3000/food/${id}`, options);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["7wZbQ","2R06K"], "2R06K", "parcelRequiread05", {})
 
 //# sourceMappingURL=food-list-practice.0f77c784.js.map

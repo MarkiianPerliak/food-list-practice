@@ -1,5 +1,90 @@
-<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Document</title><body>
-    <h1>hello</h1>
+<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Document</title><link rel=stylesheet href=/food-list-practice/food-list-practice.17cfd6f3.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;display=swap" rel=stylesheet><body>
+    <ul class=list>
 
-    <script src=/food-list-practice/food-list-practice.732206f4.js type=module></script>
+    </ul>
+    <button class=foodadd>Add Food</button>
+
+
+    <div class="backdrop backdrop-styles hidden">
+        <div class="modal modal-styles">
+            <button class="close-modal close-modal-styles">X</button>
+            <form class="input-list modal-form">
+                <div class=flexitem>
+                    <input name=title placeholder="Food Title" class=name>
+                    <p class="dv1 showbox"></p>
+                </div>
+
+                <div class=flexitem>
+                    <div class=flex-item>
+                        <input name=price placeholder="Food Price" min=0 type=number class=pric>
+                        <p class=dollars>$</p>
+                        <p class="dv2 showbox"></p>
+                    </div>
+                </div>
+
+                <div class=flexitem>
+                    <input name=imglink placeholder="Food Image Link" class=imglink>
+                    <p class="dv3 showbox"></p>
+                </div>
+
+
+                <div class=flexitem>
+                    <div class=flex-item>
+                        <input name=rating placeholder=Rate type=number min=0 max=10 class=rate>
+                        <p class=string>/</p>
+                        
+                        <p class=max-rate>10</p>
+                    </div>
+                    <p class="dv4 showbox"></p>
+                    <button class="datasend datasend-styles">Create</button>
+                </div>
+
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+<div class="backdrop-styles backdrop2 hidden">
+        <div class="modal-styles modal2">
+            <button class="close-modal-styles close-modal2">X</button>
+            <form class="input-list modal-form2">
+                <div class=flexitem>
+                    <input name=title2 placeholder="Food Title" class=name2>
+                </div>
+
+                <div class=flexitem>
+                    <div class=flex-item>
+                        <input name=price2 placeholder="Food Price" min=0 type=number class=pric2>
+                        <p class=dollars>$</p>
+
+                    </div>
+                </div>
+
+                <div class=flexitem>
+                    <input name=imglink2 placeholder="Food Image Link" class=imglink2>
+                </div>
+
+
+                <div class=flexitem>
+                    <div class=flex-item>
+                        <input name=rating2 placeholder=Rate type=number min=0 max=10 class=rate2>
+                        <p class=string>/</p>
+                        <p class=max-rate>10</p>
+                    </div>
+                    <button class="datasend-styles datasend2">Update</button>
+                </div>
+
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+    <script src=/food-list-practice/food-list-practice.ce730ea0.js type=module></script>
+
 
