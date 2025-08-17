@@ -1,26 +1,23 @@
 import { addProduct } from "./api/addfoodapi"
 import { getAPIAdress } from "./api/getfoodapi"
 import { deleteProduct } from "./api/deletefoodapi"
-// import { createHtml } from "./js/createhtml"
 import { startInterval } from "./js/startinterval"
 import { updateAPI } from "./api/updatefoodapi"
 
 const list = document.querySelector(".list")
 const foodAddButton = document.querySelector(".foodadd")
-const modal = document.querySelector(".modal")
 const backdrop = document.querySelector(".backdrop")
 const closeModal = document.querySelector(".close-modal")
 const dataSendButton = document.querySelector('.datasend')
 const modalForm = document.querySelector(".modal-form");
 
-const modal2 = document.querySelector(".modal2")
 const backdrop2 = document.querySelector(".backdrop2")
 const closeModal2 = document.querySelector(".close-modal2")
 const dataSendButton2 = document.querySelector('.datasend2')
 const modalForm2 = document.querySelector(".modal-form2");
 
 function createHtml(data) {
-    data.forEach(food => {
+    const final = data.map(food => {
         const html = `
       <li class="item">
         <button type="button" class="delete">Delete</button>
@@ -32,8 +29,10 @@ function createHtml(data) {
         <p class="price id">${food.id}</p>
       </li>
     `;
-        list.insertAdjacentHTML("beforeend", html);
+    return html
     });
+    const string = final.join(``)
+    list.innerHTML = string;
 }
 
 getAPIAdress().then((result) => result.json()).then((resultdata) => {
@@ -51,6 +50,7 @@ getAPIAdress().then((result) => result.json()).then((resultdata) => {
         button.addEventListener("click", (event) => {
             backdrop2.classList.remove("hidden")
             modalForm2.addEventListener("submit", (event) => {
+            event.preventDefault()
             const theid = button.parentElement.querySelector(".id").textContent;
             const title = event.target.elements.title2;
             const price = event.target.elements.price2;
@@ -63,6 +63,7 @@ getAPIAdress().then((result) => result.json()).then((resultdata) => {
                 "rating": `${Number(number.value)}`
             }
             updateAPI(object, theid)
+            getAPIAdress().then((result) => result.json()).then((resultdata) => createHtml(resultdata))
             })
         })
     })
@@ -80,8 +81,8 @@ modalForm.addEventListener("submit", (event) => {
     const newProduct = {
         "title": `${foodTitleInput.value}`,
         "price": `${foodPriceInput.value}`,
-        "image": `${foodImageInput.value}`,
-        "rating": `${foodRatingInput.value}`,
+        "photo": `${foodImageInput.value}`,
+        "rating": Number(foodRatingInput.value),
     }
     addProduct(newProduct)
 })
@@ -98,6 +99,10 @@ closeModal.addEventListener("click", (event) => {
 
 closeModal2.addEventListener("click", (event) => {
     backdrop2.classList.add("hidden")
+})
+
+dataSendButton.addEventListener("click", (event) => {
+    backdrop.classList.add("hidden")
 })
 
 dataSendButton2.addEventListener("click", (event) => {

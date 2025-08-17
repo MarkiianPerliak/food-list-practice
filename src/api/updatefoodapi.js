@@ -1,10 +1,18 @@
-export const updateAPI = (object, id) => {
+import { error } from "console";
+
+export const updateAPI = async (object, id) => {
 const options = {
-method: "PATCH",
+method: "PUT",
 body: JSON.stringify(object),
 headers: {
 "Content-Type": "application/json; charset=UTF-8",
 },
 };
-fetch(`http://localhost:3000/food/${id}`, options)
+
+try {
+    return await fetch(`https://68a190506f8c17b8f5da289c.mockapi.io/foods/foods/${id}`, options)
+} catch(error) {
+    return error
+}
+
 }

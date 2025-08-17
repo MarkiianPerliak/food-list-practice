@@ -3,7 +3,8 @@ const showdiv1 = document.querySelector(".dv1");
 const showdiv2 = document.querySelector(".dv2");
 const showdiv3 = document.querySelector(".dv3");
 const showdiv4 = document.querySelector(".dv4");
-
+const closeModal = document.querySelector(".close-modal")
+const dataSendButton = document.querySelector('.datasend')
 const updateInterval = setInterval(() => {
 const inputforshow1 = document.querySelector(".name").value;
 const inputforshow2 = document.querySelector(".pric").value;

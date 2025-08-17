@@ -1,4 +1,4 @@
-export const addProduct = (product) => {
+export const addProduct = async (product) => {
 const options = {
 method: "POST",
 body: JSON.stringify(product),
@@ -6,5 +6,5 @@ headers: {
 "Content-Type": "application/json; charset=UTF-8",
 },
 };
-    fetch("http://localhost:3000/food", options)
+    return await fetch("https://68a190506f8c17b8f5da289c.mockapi.io/foods/foods", options)
 }
